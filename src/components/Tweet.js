@@ -1,37 +1,29 @@
-function Tweet() {
-  return (
-    <div className="tweet">
-      <img
-        src="https://i.imgur.com/9yw1Fyw.jpg"
-        className="profile"
-        alt="profile"
-      />
+import Message from "./Message";
+import ProfileImage from "./ProfileImage";
+import User from "./User";
+import Timestamp from "./Timestamp";  
+import Actions from "./Actions"
 
+function Tweet(props) {
+
+  let message=props.tweetsArray.message
+  let name=props.tweetsArray.user.name
+  let timestamp=props.tweetsArray.timestamp
+  let image =props.tweetsArray.user.image
+  let handle = props.tweetsArray.user.handle
+    
+  return (     
+    <div className="tweet">
+      <ProfileImage image={image}/>
       <div className="body">
         <div className="top">
-          <span className="user">
-            <span className="name">Ironhack</span>
-            <span className="handle">@ironhack</span>
-          </span>
-
-          <span className="timestamp">Nov 30, 2020</span>
-        </div>
-
-        <p className="message">
-          On December 7th, we will be hosting a #webinar that will introduce you
-          to #SQL! Are you ready? 🚀
-        </p>
-
-        <div className="actions">
-          {/* Font Awesome icons */}
-          <i class="far fa-comment"></i>
-          <i class="fas fa-retweet"></i>
-          <i class="far fa-heart"></i>
-          <i class="fas fa-share"></i>
-        </div>
+          <User name={name} handle={handle}></User>
+          <Timestamp timestamp={timestamp}/>
+        </div>  
+        <Message message={message}/>
+        <Actions></Actions>
+        <i className="fas fa-ellipsis-h"></i>      
       </div>
-
-      <i class="fas fa-ellipsis-h"></i>
     </div>
   );
 }

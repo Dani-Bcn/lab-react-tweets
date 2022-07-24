@@ -8,11 +8,15 @@ body {
 }
 
 .App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
 }
 
 .tweet {
-  margin: 0 auto;
+  margin-top:20px;
   min-width: 480px;
   max-width: 640px;
   min-height: 80px;
@@ -25,6 +29,7 @@ body {
 
 .body {
   display: flex;
+  align-items: center;
   flex-direction: column;
   width: 100%;
 }
@@ -84,4 +89,7 @@ body {
   display: flex;
   justify-content: space-between;
   color: #536471;
+}
+p{
+  text-align: start;
 }
