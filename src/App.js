@@ -39,8 +39,8 @@ function App() {
   
   return (
     tweetsArray.map((e,t)=>
-    <div className="App">
-        <Tweet  tweetsArray={tweetsArray[t]}></Tweet>
+    <div className="App" key={t}>
+        <Tweet  tweetsArray={tweetsArray[t]} ></Tweet>
     </div>
     
     )
